@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwanese Tutor - 線上台語課</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="meet-container">
+        <!-- Top Right Video Gallery -->
+        <div class="video-gallery">
+            <div class="video-box user-video">
+                <div class="avatar">你</div>
+                <div class="name-tag">學生 (You)</div>
+                <span class="material-icons mic-off">mic_off</span>
+            </div>
+            <div class="video-box tutor-video">
+                <!-- Using the generated tutor avatar -->
+                <img src="tutor_avatar.png" alt="Tutor">
+                <div class="name-tag">林老師 (Tutor) <span class="material-icons volume-icon">volume_up</span></div>
+            </div>
+        </div>
+
+        <!-- Main Screen Share / Presentation Area -->
+        <main id="app" class="presentation-area">
+            <!-- Content gets injected here via JS -->
+        </main>
+
+        <!-- Bottom Control Bar -->
+        <div class="control-bar">
+            <div class="left-controls">
+                <div class="time" id="clock-display">10:00 AM</div>
+                <div class="divider">|</div>
+                <div class="meet-title">台語家教課 qwe-asdf-zxc</div>
+            </div>
+            <div class="center-controls">
+                <button class="icon-btn active" title="關閉麥克風"><span class="material-icons">mic_off</span></button>
+                <button class="icon-btn active" title="關閉攝影機"><span class="material-icons">videocam_off</span></button>
+                <button class="icon-btn" title="開啟字幕"><span class="material-icons">closed_caption</span></button>
+                <button class="icon-btn" title="舉手"><span class="material-icons">pan_tool</span></button>
+                <button class="icon-btn" title="分享螢幕畫面"><span class="material-icons">present_to_all</span></button>
+                <button class="icon-btn" title="更多選項"><span class="material-icons">more_vert</span></button>
+                <button class="icon-btn end-call" title="離開通話"><span class="material-icons">call_end</span></button>
+            </div>
+            <div class="right-controls">
+                <button class="icon-btn" title="會議詳細資料"><span class="material-icons">info</span></button>
+                <button class="icon-btn" title="顯示參與者"><span class="material-icons">people</span></button>
+                <button class="icon-btn" title="與所有參與者通訊"><span class="material-icons">chat</span></button>
+                <button class="icon-btn" title="主辦人控制項"><span class="material-icons">security</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
