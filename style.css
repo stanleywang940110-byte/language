@@ -191,6 +191,15 @@ body {
   background: #d93025;
 }
 
+.center-controls .icon-btn.active-blue {
+  background: var(--accent-blue);
+  color: var(--bg-dark);
+}
+
+.center-controls .icon-btn.active-blue:hover {
+  background: #a8c7fa;
+}
+
 .center-controls .icon-btn.end-call {
   background: var(--danger-red);
   padding-left: 24px;

@@ -573,5 +573,74 @@ function render() {
   }
 }
 
+// Google Meet bottom controls logic
+function setupMeetControls() {
+  const btnMic = document.getElementById('btn-mic');
+  if (btnMic) {
+    btnMic.addEventListener('click', () => {
+      btnMic.classList.toggle('active');
+      const icon = btnMic.querySelector('.material-icons');
+      if (btnMic.classList.contains('active')) {
+        icon.textContent = 'mic_off';
+        btnMic.title = '開啟麥克風';
+      } else {
+        icon.textContent = 'mic';
+        btnMic.title = '關閉麥克風';
+      }
+    });
+  }
+
+  const btnCam = document.getElementById('btn-cam');
+  if (btnCam) {
+    btnCam.addEventListener('click', () => {
+      btnCam.classList.toggle('active');
+      const icon = btnCam.querySelector('.material-icons');
+      const userVideoPlaceholder = document.querySelector('.user-video .avatar');
+      
+      if (btnCam.classList.contains('active')) {
+        icon.textContent = 'videocam_off';
+        btnCam.title = '開啟攝影機';
+        if (userVideoPlaceholder) userVideoPlaceholder.style.display = 'flex';
+      } else {
+        icon.textContent = 'videocam';
+        btnCam.title = '關閉攝影機';
+        if (userVideoPlaceholder) userVideoPlaceholder.style.display = 'none'; // mock turning camera on
+      }
+    });
+  }
+
+  const toggleButtons = [
+    { id: 'btn-cc' },
+    { id: 'btn-hand' },
+    { id: 'btn-present' },
+    { id: 'btn-more' }
+  ];
+  
+  toggleButtons.forEach(btnInfo => {
+    const btn = document.getElementById(btnInfo.id);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active-blue');
+      });
+    }
+  });
+
+  const btnLeave = document.getElementById('btn-leave');
+  if (btnLeave) {
+    btnLeave.addEventListener('click', () => {
+      if(confirm('確定要離開通話嗎？目前的測驗進度將會中斷，並返回首頁。')) {
+        state.screen = 'start';
+        state.score = 0;
+        state.currentIndex = 0;
+        state.answered = false;
+        render();
+      }
+    });
+  }
+}
+
 // Init
-document.addEventListener('DOMContentLoaded', render);
+document.addEventListener('DOMContentLoaded', () => {
+  setupMeetControls();
+  render();
+});
